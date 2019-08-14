@@ -32,6 +32,12 @@ function fake(info, tab, type) {
   });
 }
 
+function wait(info, tab, type) {
+  chrome.tabs.sendRequest(tab.id, {
+    "method": "wait"
+  });
+}
+
 function loadMenu() {
   chrome.contextMenus.removeAll(function() {
     // Create menu items
