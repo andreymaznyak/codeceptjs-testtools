@@ -91,6 +91,16 @@ var App = new Vue({
                     });
                 }
             });
+
+            document.onkeyup=function(e){
+                e = e || window.event;
+                if(e.ctrlKey && e.which === 32) {
+                    self.steps.push({
+                        'method': 'wait',
+                        'args': [1]
+                    });
+                }
+            };
         }
     },
 
